@@ -1,0 +1,154 @@
+.wide-bar {
+  border-bottom: 10px solid #000;
+  width: 150px;
+}
+
+.long-bar {
+  height: 250px;
+  border-left: 10px solid #000;
+  margin-top: -40px;
+  float: left;
+}
+
+.hanger {
+  width: 40px;
+  height: 40px;
+  margin-left: 140px;
+  border-left: 10px solid #000;
+  display: inline-block;
+}
+
+.head {
+  margin-left: 125px;
+  background: #000;
+  width: 40px;
+  height: 40px;
+  border-radius: 40px;
+  margin-top: -2px;
+}
+
+.left-hand {
+  display: inline-block;
+  height: 40px;
+  width: 50px;
+  border-right: 10px solid #000;
+  -moz-transform: skew(-45deg);
+  -webkit-transform: skew(-45deg);
+  transform: skew(-45deg);
+  margin-left: 55px;
+  top: -25px;
+  position: relative;
+  left: 8px;
+}
+
+.torso {
+  display: inline-block;
+  width: 10px;
+  height: 75px;
+  background: #000;
+  margin-left: 21px;
+}
+
+.right-hand {
+  display: inline-block;
+  height: 40px;
+  width: 50px;
+  border-right: 10px solid #000;
+  -moz-transform: skew(45deg);
+  -webkit-transform: skew(45deg);
+  transform: skew(45deg);
+  margin-left: 55px;
+  margin-left: -25px;
+  top: -25px;
+  position: relative;
+}
+
+.legs {
+  margin-top: -7px;
+}
+
+.left-leg {
+  display: inline-block;
+  height: 50px;
+  width: 50px;
+  border-right: 10px solid #000;
+  -moz-transform: skew(-45deg);
+  -webkit-transform: skew(-45deg);
+  transform: skew(-45deg);
+  margin-left: 60px;
+}
+
+.right-leg {
+  display: inline-block;
+  height: 50px;
+  width: 50px;
+  border-right: 10px solid #000;
+  -moz-transform: skew(45deg);
+  -webkit-transform: skew(45deg);
+  transform: skew(45deg);
+  margin-left: 7px;
+}
+
+.base-bar {
+  width: 50px;
+  height: 50px;
+  border-bottom: 10px solid #000;
+  margin: -10px;
+}
+
+.hide {
+  visibility: hidden;
+}
+
+.word-box {
+  min-width: 300px;
+  height: 40px;
+  margin-top: 30px;
+}
+
+.letters {
+  margin-top: 20px;
+}
+
+.letter {
+  display: inline-block;
+  text-align: center;
+  cursor: pointer;
+  width: 40px;
+  height: 40px;
+  padding: 5px;
+  margin: 10px;
+  border: 1px solid #ccc;
+}
+
+.wrong-guess {
+  background-color: red;
+  color: #FFF;
+}
+
+.right-guess {
+  background-color: green;
+  color: #FFF;
+}
+
+.letter-box {
+  display: inline-block;
+  width: 50px;
+  height: 39px;
+  line-height: 38px;
+  border: 1px solid #ccc;
+  text-align: center;
+}
+
+
+.game-over {
+  position: fixed;
+  top: 56%;
+  width: 100%;
+  height: 300px;
+  background: #3f3e3e;
+  text-align: center;
+  padding-top: 100px;
+  font-size: 44px;
+  color: #FFF;
+}
