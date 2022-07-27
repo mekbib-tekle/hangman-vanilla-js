@@ -27,7 +27,7 @@ let wrongGuessCount = 0;
 const maxGuess = 7;
 
 const checkGameOver = () => {
-  if (wrongGuessCount > maxGuess) {
+  if (wrongGuessCount >= maxGuess-1) {
     document.querySelectorAll(".game-over").classList.remove("hide");
   }
 }
@@ -48,8 +48,9 @@ const checkGameWin = () => {
 
 const guessLetter = (e) => {
   const clickedLetter = e.target.textContent;
-  // e.target.removeEventListener("click")
+  e.target.removeEventListener("click", guessLetter)
 
+  // if correct guess..
   if (word.indexOf(clickedLetter) >= 0) {
     const letterEl = document.querySelectorAll(`.letter-box.letter-${clickedLetter}`);
     letterEl.forEach(el => { el.innerHTML = clickedLetter; });
@@ -58,22 +59,24 @@ const guessLetter = (e) => {
     return false;
   }
 
-  // show the parts of the hangman that were hidden
+  // wrong guess: show the parts of the hangman that were hidden
   const hiddenEls = document.querySelectorAll(".hide");
   hiddenEls[0].classList.remove("hide");
-  wrongGuessCount++;
+  wrongGuessCount += 1;
 
   e.target.classList.add("wrong-guess");
 
   checkGameOver();
 }
 
+// A - Z
 const letters = document.querySelectorAll(".letter");
 
 letters.forEach(el => {
   el.addEventListener("click", guessLetter);
 });
 
+// the empty boxes which are the placeholders for the word being guessed
 const buildWordBoxes = () => {
   [...word].forEach((letter) => {
     const letterEl = `<div class="letter-box letter-${letter}">&nbsp;</div>`;
@@ -83,13 +86,11 @@ const buildWordBoxes = () => {
 
 buildWordBoxes();
 
-const replay = () => {
+const addReplayEvent = () => {
   const replayBtn = document.querySelector(".replay");
   replayBtn.addEventListener("click", () => {
-    // wrongGuessCount = 0;
-    // document.querySelector(".game-over").classList.add("hide");
     location.reload();
   }); 
 }
 
-replay();
+addReplayEvent();
